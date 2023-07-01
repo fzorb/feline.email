@@ -1,0 +1,6 @@
+{
+    "endpoint": "https://mail.server.xyz",
+    "token": "XXXXX-XXXXX-XXXXX-XXXXX",
+    "secret": "secret",
+    "domain": "server.xyz"
+}
