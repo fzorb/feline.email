@@ -52,4 +52,4 @@ def new():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html', ip=request.remote_addr, domain=config['domain'])
+    return render_template('index.html', ip=request.remote_addr, domain=config['domain'], xconnecting = request.headers.get('X-Connecting-IP'))
