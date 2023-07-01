@@ -60,7 +60,7 @@
                         <div class="col-md-8">
                             <div class="input-group">
                                 <input type="text" name="email" id="email" class="form-control" placeholder="tom" aria-label="email" aria-describedby="emailaddon" required>
-                                <span class="input-group-text" id="emailaddon">@feline.email</span>
+                                <span class="input-group-text" id="emailaddon">@{{ domain }}</span>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,14 @@
                 <p>By registering, you agree to the terms of service and privacy policy.</p>
                 <p>After registartion, you will be redirected to the portal. You can then login with your email address and password into SOGO or edit your account settings.</p>
             </div>
+            
+            
         </div>
+        <p>IP: <span class="ip" id="ip" onclick="this.textContent = '{{ ip }}';">click to show</span></p>
+
+        <style>
+            
+        </style>
         
         
         
