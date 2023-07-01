@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>feline.email</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
+        .stretch-icon {
+            display: flex;
+            justify-content: center;
+        }
+        .stretch-icon i {
+            width: 100%;
+            font-size: 3rem;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container pt-4" style="max-width: 36rem;">
+            <h1>feline.email</h1>
+            <p>feline.email is a free private email service ran by the <a href="https://catin.space">Cat in Space</a> Group.</p>
+            <div class="row text-center pt-4">
+            <div class="col col-4">
+                <div class="stretch-icon">
+                    <i class="fa-solid fa-user-slash"></i>
+                </div>
+                <small>No personal information required</small>
+            </div>
+            <div class="col col-4">
+                <div class="stretch-icon">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <small>Completely free to use</small>
+            </div>
+            <div class="col col-4">
+                <div class="stretch-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <small>Open-source and transparent</small>
+            </div>
+        </div>
+        <div class="card mt-4">
+            <div class="card-header">
+                Register
+            </div>
+            <div class="card-body">
+                {# flash stuff #}
+                {% with messages = get_flashed_messages() %}
+                {% for message in messages %}
+                <p class="text-danger"><strong>Error: </strong>{{ message }}</p>
+                {% endfor %}
+                {% endwith %}
+
+                {# end flash stuff #}
+                <form method="POST" action="/new">
+                    <div class="form-group row mb-3">
+                        <label for="email" class="col-md-4 col-form-label text-md-right" style="text-align: right;">Email</label>
+                        <div class="col-md-8">
+                            <div class="input-group">
+                                <input type="text" name="email" id="email" class="form-control" placeholder="tom" aria-label="email" aria-describedby="emailaddon" required>
+                                <span class="input-group-text" id="emailaddon">@feline.email</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="email" class="col-md-4 col-form-label text-md-right" style="text-align: right;">Password</label>
+                        <div class="col-md-8">
+                            <div class="input-group">
+                                <input type="password" name="password" id="password" class="form-control" placeholder="********" aria-label="password" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="email" class="col-md-4 col-form-label text-md-right" style="text-align: right;">Name (optional)</label>
+                        <div class="col-md-8">
+                            <div class="input-group">
+                                <input type="text" name="name" id="password" class="form-control" placeholder="Thomas Hedge" aria-label="password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="email" class="col-md-4 col-form-label text-md-right" style="text-align: right;"></label>
+                        <div class="col-md-8">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </div>
+                    </div>
+                </form>        
+            </div>
+            <div class="card-footer">
+                <p>By registering, you agree to the terms of service and privacy policy.</p>
+                <p>After registartion, you will be redirected to the portal. You can then login with your email address and password into SOGO or edit your account settings.</p>
+            </div>
+        </div>
+        
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
